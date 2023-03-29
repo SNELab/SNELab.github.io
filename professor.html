@@ -24,6 +24,7 @@
     <!-- fontawesome -->
     <script src="https://use.fontawesome.com/87d205ccd0.js"></script>
 
+
     <style>
 
       @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
@@ -246,7 +247,8 @@
         transition: all 200ms linear;
       }
       .dropdown-item:hover, 
-      .dropdown-item:focus {
+      .dropdown-item:focus,
+      .dropdown-item.active {
         color: #fff;
         background-color: rgba(129,103,169,.6);
       }
@@ -306,6 +308,9 @@
       }
 
       /**************************footer**************************/
+      footer {
+        margin-top : auto;
+      }
       .site-footer
       {
         background-color:#26272b;
@@ -313,6 +318,7 @@
         font-size:15px;
         line-height:24px;
         color:#737373;
+        margin-top : auto;
       }
       .site-footer hr
       {
@@ -400,13 +406,13 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto py-4 py-md-0">
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link" href="https://snelab.github.io">Home</a>
                   </li>
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="https://snelab.github.io/professor" role="button" aria-haspopup="true" aria-expanded="false">People</a>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="https://snelab.github.io/professor">Professor</a>
+                      <a class="dropdown-item active" href="https://snelab.github.io/professor">Professor</a>
                       <a class="dropdown-item" href="https://snelab.github.io/members">Members</a>
                       <a class="dropdown-item" href="https://snelab.github.io/alumni">Alumni</a>
                     </div>
@@ -422,6 +428,7 @@
                   </li>
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link" href="https://snelab.github.io/publications">Publications</a>
+                  </li>
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link" href="https://snelab.github.io/contact">Contact</a>
                   </li>
@@ -436,33 +443,18 @@
 
 
     <div class="section full-height container">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://raw.githubusercontent.com/SNELab/SNELab.github.io/main/image/carousel1.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
+      <div class="container bg-white">
+        <!-- 여백 -->
+        <div style="padding:20px;"></div>
+
+        <div class="content row">
+          <div class="col-xl-12">
+            <h2>People > Professor</h2>
+            <hr>
+            
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </button>
       </div>
-
 
 
     </div>
@@ -480,7 +472,7 @@
           </div>
           <div class="col-lg-6">
             <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
-             <a href="https://snelab.github.io">SoftNanoElectronicsLab</a>.
+             <a href="https://snelab.github.io/">SoftNanoElectronicsLab</a>.
            </p>
          </div>
        </div>
@@ -526,10 +518,7 @@
   })(jQuery); 
 
 
-  // carousel
-  $('.carousel').carousel({
-    interval: 2000
-  })
+
 </script>
 
 </body>

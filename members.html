@@ -24,6 +24,7 @@
     <!-- fontawesome -->
     <script src="https://use.fontawesome.com/87d205ccd0.js"></script>
 
+
     <style>
 
       @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
@@ -246,10 +247,34 @@
         transition: all 200ms linear;
       }
       .dropdown-item:hover, 
-      .dropdown-item:focus {
+      .dropdown-item:focus,
+      .dropdown-item.active {
         color: #fff;
         background-color: rgba(129,103,169,.6);
       }
+
+      /*members*/
+      .p-5 hr {
+        text-align : left;
+        margin-left: 0;
+        width: 120px;
+      }
+      .members img {
+        width : 60%;
+        margin : 5%;
+        padding : 5%;
+      }
+
+      /*personal_information*/
+      .personal_information .name {
+        color : #8167a9;
+        font-size : 1.5rem;
+        font-weight: bold;
+      }
+      .personal_information a:hover {
+        color: #8167a9 !important;
+      }
+
 
 
       /* #Media
@@ -305,6 +330,9 @@
       }
 
       /**************************footer**************************/
+      footer {
+        margin-top : auto;
+      }
       .site-footer
       {
         background-color:#26272b;
@@ -312,6 +340,7 @@
         font-size:15px;
         line-height:24px;
         color:#737373;
+        margin-top : auto;
       }
       .site-footer hr
       {
@@ -379,8 +408,6 @@
           padding-bottom:0
         }
       }
-
-
     </style>
   </head>
   <body class="hero-anime"> 
@@ -402,11 +429,11 @@
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link" href="https://snelab.github.io">Home</a>
                   </li>
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="https://snelab.github.io/professor" role="button" aria-haspopup="true" aria-expanded="false">People</a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="https://snelab.github.io/professor">Professor</a>
-                      <a class="dropdown-item" href="https://snelab.github.io/members">Members</a>
+                      <a class="dropdown-item active" href="https://snelab.github.io/members">Members</a>
                       <a class="dropdown-item" href="https://snelab.github.io/alumni">Alumni</a>
                     </div>
                   </li>
@@ -422,7 +449,7 @@
                   <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link" href="https://snelab.github.io/publications">Publications</a>
                   </li>
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link" href="https://snelab.github.io/contact">Contact</a>
                   </li>
                 </ul>
@@ -440,38 +467,94 @@
         <!-- 여백 -->
         <div style="padding:20px;"></div>
 
-        <div class="content row">
+        <div class="content row members">
           <div class="col-xl-12">
-            <h2>CONTACT</h2>
-
+            <h2>Members</h2>
             <hr>
+            <div class="p-5">
 
-            <p><i class="fa fa-map-marker"></i> 서울특별시 성북구 월곡2동 화랑로14길 5,한국과학기술연구원(KIST) 차세대반도체연구소 광전소재연구단 L4544</p>
-            <p>L4544 Center for Opto-Electronic Materials and Devices, Post-Silicon Semiconductor Institute, Korea Institute of Science and Technology (KIST) 5, Hwarang-ro 14-gil Seongbuk-gu Seoul, 02792 Republic of Korea</p>
+              <!-- ?? -->
+              <!-- <h4>??</h4>
+              <hr>
+              <div class="row">
+                <div class="col-6">
+                  <img src="" alt="english name">
+                  <div class="personal_information">
+                    <p class="name">korean name (english name)</p>
+                    <p><span class="bold">E-mail</span> : ??@kist.re.kr</p>
+                    <p><span class="bold">Research Area</span> : ??</p>
+                  </div>
+                </div>
+              </div> -->
 
-            <p><i class="fa fa-phone"></i> 02-0000-0000</p>
-            <p><i class="fa fa-clock-o"></i> 9AM - 6PM</p>
-            <p><i class="fa fa-envelope-o"></i> E-mail : <a href="mailto:wkchoi@kist.re.kr">wkchoi@kist.re.kr</a></p>
-          </div>
-        </div>
-        <hr>
-        <div class="content row" id="contact-map">
-          <div class="col-lg-6">
-            <div id="map_canvas">
-              <center>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.038093392427!2d127.04310931557907!3d37.60126247979139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbb7cd6ae2e13%3A0x6ad590233985143c!2zS0lTVCB8IO2VnOq1reqzvO2Vmeq4sOyIoOyXsOq1rOybkA!5e0!3m2!1sko!2skr!4v1679646358829!5m2!1sko!2skr" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </center>
+              <!-- Post Doc. -->
+              <h4>Post Doc.</h4>
+              <hr>
+              <div class="row">
+                <div class="col-6">
+                  <img src="" alt="Ju-Sung Kim">
+                  <div class="personal_information">
+                    <p class="name">김 주 성 (Ju-Sung Kim)</p>
+                    <p><span class="bold">E-mail</span> : jskim5772@kist.re.kr</p>
+                    <p><span class="bold">Research Area</span> : ZnO-based quantum dot LED</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 여백 -->
+              <div class="m-5"></div>
+
+              <!-- Ph.D. Course -->
+              <h4>Ph.D. Course</h4>
+              <hr>
+              <div class="row">
+                <div class="col-6">
+                  <img src="https://raw.githubusercontent.com/SNELab/SNELab.github.io/main/image/picture_jonghyun_choi.jpg" alt="Jonghyun Choi">
+                  <div class="personal_information">
+                    <p class="name">최 종 현 (Jonghyun Choi)</p>
+                    <p><span class="bold">E-mail</span> : henry@kist.re.kr</p>
+                    <p><span class="bold">Research Area</span> : ZnO-based quantum dot LED</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 여백 -->
+              <div class="m-5"></div>
+
+
+              <!-- Intern -->
+              <h4>Intern</h4>
+              <hr>
+              <div class="row">
+                <div class="col-6">
+                  <img src="" alt="Seung-Hwan Oh">
+                  <div class="personal_information">
+                    <p class="name">오 승 환 (Seung-Hwan Oh)</p>
+                    <p><span class="bold">E-mail</span> : osh08@kist.re.kr</p>
+                    <p><span class="bold">Research Area</span> : Barrier Film & Simulation</p>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <img src="" alt="Jae-Eun Huh">
+                  <div class="personal_information">
+                    <p class="name">허 재 은 (Jae-Eun Huh)</p>
+                    <p><span class="bold">E-mail</span> : jyhuh94@kist.re.kr</p>
+                    <p><span class="bold">Research Area</span> : Stationary Plasma Thruster</p>
+                  </div>
+                </div>
+              </div>
+
+
+
             </div>
-          </div>
-          <div class="col-lg-6">
-            <img src="https://raw.githubusercontent.com/SNELab/SNELab.github.io/main/image/kist_map.jpeg" alt="" width=100%>
+
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- 여백 -->
-    <div style="padding:60px;"></div>
+
+    </div>
 
     <!------------ footer ------------>
 
@@ -486,7 +569,7 @@
           </div>
           <div class="col-lg-6">
             <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
-             <a href="https://snelab.github.io">SoftNanoElectronicsLab</a>.
+             <a href="https://snelab.github.io/">SoftNanoElectronicsLab</a>.
            </p>
          </div>
        </div>
@@ -530,6 +613,8 @@
     }); 
 
   })(jQuery); 
+
+
 
 </script>
 

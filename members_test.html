@@ -254,26 +254,304 @@
       }
 
       /*members*/
-      .p-5 hr {
-        text-align : left;
-        margin-left: 0;
-        width: 120px;
-      }
-      .members img {
-        width : 60%;
-        margin : 5%;
-        padding : 5%;
+
+      #app {
+        height: 100%;
+        font-family: $fontFamily;
+        background: linear-gradient(to bottom right,#f5f2fd,#bfcbda);
+        @extend .flex-center;
       }
 
-      /*personal_information*/
-      .personal_information .name {
-        color : #8167a9;
-        font-size : 1.5rem;
-        font-weight: bold;
+      #app .container,
+      #app .columns {
+        height: 100%;
       }
-      .personal_information a:hover {
-        color: #8167a9 !important;
+
+      #app .menu {
+        height: 100%;
+        background: linear-gradient(to bottom right,#f8a3a4,#e2587c);
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
       }
+
+      .menu-list__profile {
+        padding: 4.0rem 3.0rem;
+
+        .image {
+          height: 80px;
+          width: 80px;
+        }
+
+        .image img {
+          border-radius: 50px;
+        }
+
+        .subtitle {
+          padding-top: 0.8rem;
+        }
+        @extend .flex-center;
+      }
+
+      .menu-list__main {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      .menu-list__main li {
+        padding: 0.5rem 0;
+
+        .fas, .far {
+          width: 35px;
+          font-size: 1.3rem;
+          padding-right: 0.9rem;
+        }
+
+        a {
+          color: $colorWhite;
+          display: inline-flex;
+          align-items: center;
+          letter-spacing: 0.1rem;
+          font-weight: 800;
+          opacity: 0.6;
+        }
+
+        a.active {
+          opacity: 1.0;
+        }
+
+        a:hover {
+          background-color: inherit;
+          color: #FFF;
+          opacity: 1.0;
+        }
+      }
+
+      .menu-list__outlier {
+        margin-top: 10.0rem;
+      }
+
+      #app .dashboard {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom right,#f9fafb,#dfe4eb);
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        @extend .flex-center;
+      }
+
+      .dashboard__content {
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+
+        .header {
+          display: block;
+          height: 100px;
+          margin-top: 3.0rem;
+        }
+
+        .row {
+          margin: 1.0rem 0;
+        }
+
+        .bottom-row {
+          margin-bottom: 3.0rem;
+        }
+      }
+
+      .card { 
+        border-radius: 0.2rem;
+        box-shadow: initial;
+
+        .media {
+          margin-bottom: 1.7rem !important;
+
+          .image img {
+            border-radius: 30px;
+          }
+        }
+
+        .title {
+          font-size: 0.9rem;
+          letter-spacing: 1px;
+          padding-bottom: 0.5rem;
+        }
+
+        .subtitle {
+          margin-bottom: 1.0rem;
+        }
+
+        .content {
+          padding-bottom: 2.5rem;
+          transition: all 1s;
+        }
+      }
+
+      // Helper Classes
+      .font-color-dark {
+        color: $colorDark;  
+      }
+
+      .font-color-medium {
+        color: $colorMedium;
+      }
+
+      .font-color-light {
+        color: $colorLight;
+      }
+
+      .font-color-primary {
+        color: $colorPrimary;
+      }
+
+      .font-color-white {
+        color: $colorWhite;
+      }
+
+      .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      // Media Responsiveness
+      @media(max-width: $large) {
+        .menu-list__profile {
+          flex-direction: column;
+
+          .title {
+            padding-top: 0.5rem;
+          }
+
+          .subtitle {
+           padding-top: 0;
+         }
+       }
+
+       .media-content {
+        text-align: center;
+      }
+
+      .card {
+        .card-content {
+          padding: 1.0rem;
+        }
+
+        .card .title {
+          font-size: 0.7rem;
+        }
+
+        .content {
+          font-size: 0.9rem;
+          padding-bottom: 1.5rem;
+        }
+      }
+    }
+
+    @media(min-width: $medium) {
+      #app .container {
+        padding: 1.0rem 0;
+      }
+
+      .dashboard__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    @media(min-width: $breakpoint) {
+      .columns {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+      }
+
+      .columns>.column.is-3 {
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;
+        width: 25%;
+      }
+    }
+
+    @media(min-width: $breakpoint) and (max-width: 840px) {
+      .menu-list__profile .subtitle {
+        font-size: 0.6rem;
+      }
+
+      .menu-list__main li .fas {
+        font-size: 1.1rem !important;
+      }
+
+      .menu-list__main li a {
+        font-size: .60rem !important;
+      }
+    }
+
+    @media(max-width: $breakpoint) {
+      #app .container {
+        width: 100%;
+      }
+
+      .menu-list__main {
+        display: none;
+      }
+
+      .card {
+        max-width: 350px;
+        margin: 0 auto;
+
+        .media {
+          margin-bottom: .75rem !important;
+        }
+
+        .media .media-left {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    // For thumbnail preview; hack :P
+    @media(max-width: $large) and (max-height: $medium) {
+      #app .container {
+        padding: 0;    
+      }
+
+      .menu-list__profile {
+        padding: 2.0rem 2.0rem;
+
+        .title {
+          font-size: 1.0rem !important;
+        }
+      }
+
+      .media-left {
+        margin-right: 0.5rem;
+      }
+
+      .media-content .title {
+        font-size: 0.65rem;
+      }
+
+      .menu-list__main li .fas {
+        font-size: 1.1rem !important;
+      }
+
+      .menu-list__main li a {
+        font-size: .60rem !important;
+      }
+
+      .menu-list__outlier {
+        margin-top: 1.5rem;
+      }
+
+      .card .content {
+        font-size: 0.7rem;
+        padding-bottom: 0.2rem; 
+      }
+    }
+
 
 
 
@@ -408,6 +686,8 @@
           padding-bottom:0
         }
       }
+
+
     </style>
   </head>
   <body class="hero-anime"> 
@@ -426,14 +706,14 @@
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto py-4 py-md-0">
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
                     <a class="nav-link" href="https://snelab.github.io">Home</a>
                   </li>
-                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                  <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="https://snelab.github.io/professor" role="button" aria-haspopup="true" aria-expanded="false">People</a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="https://snelab.github.io/professor">Professor</a>
-                      <a class="dropdown-item active" href="https://snelab.github.io/members">Members</a>
+                      <a class="dropdown-item" href="https://snelab.github.io/members">Members</a>
                       <a class="dropdown-item" href="https://snelab.github.io/alumni">Alumni</a>
                     </div>
                   </li>
@@ -466,133 +746,111 @@
         <!-- 여백 -->
         <div style="padding:20px;"></div>
 
-        <div class="content row members">
+        <div class="content row">
           <div class="col-xl-12">
             <h2>Members</h2>
             <hr>
-            <div class="p-5">
-
-              <!-- ?? -->
-              <!-- <h4>??</h4>
-              <hr>
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="" alt="english name">
-                  <div class="personal_information">
-                    <p class="name">korean name (english name)</p>
-                    <p><span class="bold">E-mail</span> : ??@kist.re.kr</p>
-                    <p><span class="bold">Research Area</span> : ??</p>
+            <div id="app">
+              <div class="container">
+                <div class="columns is-gapless">
+                  <div class="column is-3">
+                    <aside class="menu">
+                      <ul class="menu-list">
+                        <div class="menu-list__profile media">
+                          <div class="media-left">
+                            <figure class="image">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/profile/profile-512.jpg?100000">
+                            </figure>
+                          </div>
+                          <div class="media-content">
+                            <p class="title is-5 font-color-white">Hassan Djirdeh</p>
+                            <p class="subtitle is-7 has is-uppercase font-color-white has-text-weight-bold">edit</p>
+                          </div>
+                        </div>
+                        <div class="menu-list__main is-uppercase has-text-left">
+                          <li><a class="subtitle is-7"><i class="fas fa-cubes"></i>Dashboard</a></li>
+                          <li><a class="subtitle is-7 active"><i class="fas fa-user"></i> Members</a></li>
+                          <li><a class="subtitle is-7"><i class="fas fa-database"></i> Database</a></li>
+                          <li><a class="subtitle is-7"><i class="far fa-chart-bar"></i> Statistics</a></li>
+                          <li class="menu-list__outlier"><a class="subtitle is-7"><i class="fas fa-cog"></i> Settings</a></li>
+                        </div>
+                      </ul>
+                    </aside>
                   </div>
-                </div>
-              </div> -->
-
-              <!-- Post Doc. -->
-              <h4>Post Doc.</h4>
-              <hr>
-              <div class="row">
-                <div class="col-md-6 col-xs-12">
-                  <img src="https://raw.githubusercontent.com/SNELab/SNELab.github.io/main/image/picture_Juseong_kim.jpg" alt="Ju-Seong Kim">
-                  <div class="personal_information">
-                    <p class="name">김 주 성 (Ju-Seong Kim)</p>
-                    <p><span class="bold">E-mail</span> : jskim5772@kist.re.kr</p>
-                    <p><span class="bold">Research Area</span> : Electrical optical device based on QDs</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 여백 -->
-              <div class="m-5"></div>
-
-              <!-- Ph.D. Course -->
-              <h4>Ph.D. Course</h4>
-              <hr>
-              <div class="row">
-                <div class="col-md-6 col-xs-12">
-                  <img src="https://raw.githubusercontent.com/SNELab/SNELab.github.io/main/image/picture_jonghyun_choi.jpg" alt="Jonghyun Choi">
-                  <div class="personal_information">
-                    <p class="name">최 종 현 (Jonghyun Choi)</p>
-                    <p><span class="bold">E-mail</span> : henry@kist.re.kr</p>
-                    <p><span class="bold">Research Area</span> : ZnO-based quantum dot LED</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 여백 -->
-              <div class="m-5"></div>
-
-
-              <!-- Intern -->
-              <h4>Intern</h4>
-              <hr>
-              <div class="row">
-                <div class="col-md-6 col-xs-12">
-                  <img src="https://raw.githubusercontent.com/SNELab/SNELab.github.io/main/image/picture_seunghwan_oh.jpg" alt="Seunghwan Oh">
-                  <div class="personal_information">
-                    <p class="name">오 승 환 (Seunghwan Oh)</p>
-                    <p><span class="bold">E-mail</span> : osh08@kist.re.kr</p>
-                    <p><span class="bold">Research Area</span> : Barrier Film, WVTR, permeation</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-xs-12">
-                  <img src="https://raw.githubusercontent.com/SNELab/SNELab.github.io/main/image/picture_Jaeeun_Huh.jpg" alt="Jae-Eun Huh">
-                  <div class="personal_information">
-                    <p class="name">허 재 은 (Jae-Eun Huh)</p>
-                    <p><span class="bold">E-mail</span> : jyhuh94@kist.re.kr</p>
-                    <p><span class="bold">Research Area</span> : Stationary Plasma Thruster</p>
+                  <div class="column">
+                    <div class="dashboard">
+                      <div class="dashboard__content">
+                        <div class="header">
+                          <div>
+                            <p class="title is-5 is-pulled-left font-color-dark">Team Members 
+                              <span class="subtitle is-6 is-block font-color-light" style="padding-top: 1.0rem">102 members</span></p>
+                              <p class="title is-6 is-pulled-right font-color-medium">14 Available Now
+                                <span class="subtitle is-6 is-block font-color-primary is-uppercase" style="font-size: 0.9rem; padding-top: 1.0rem">View members</span></p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="columns">
+                                <div class="column one-third" v-for="user in firstThreeUsers">
+                                  <user-card :user="user"></user-card>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row bottom-row">
+                              <div class="columns">
+                                <div class="column one-third" v-for="user in lastThreeUsers">
+                                  <user-card :user="user"></user-card>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
 
 
             </div>
 
-          </div>
-        </div>
-      </div>
+            <!------------ footer ------------>
+
+            <!-- Site footer -->
+            <footer class="site-footer">
+              <div class="container">
+                <div class="row">
+
+                  <div class="col-lg-6">
+                    <h6>About</h6>
+                    <p class="text-justify">Soft Nano Electronics Lab, Center of Optoelectronic Materials and Devices, Post-Si Semiconductor Institute, Korea Institute of Science and Technology (KIST)</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+                     <a href="https://snelab.github.io/">SoftNanoElectronicsLab</a>.
+                   </p>
+                 </div>
+               </div>
+               <hr>
+             </div>
+           </footer>
 
 
-    </div>
+           <!-- nav javascript -->
+           <script>
+            (function($) { "use strict";
 
-    <!------------ footer ------------>
+              $(function() {
+                var header = $(".start-style");
+                $(window).scroll(function() {    
+                  var scroll = $(window).scrollTop();
 
-    <!-- Site footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-6">
-            <h6>About</h6>
-            <p class="text-justify">Soft Nano Electronics Lab, Center of Optoelectronic Materials and Devices, Post-Si Semiconductor Institute, Korea Institute of Science and Technology (KIST)</p>
-          </div>
-          <div class="col-lg-6">
-            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
-             <a href="https://snelab.github.io/">SoftNanoElectronicsLab</a>.
-           </p>
-         </div>
-       </div>
-       <hr>
-     </div>
-   </footer>
-
-
-   <!-- nav javascript -->
-   <script>
-    (function($) { "use strict";
-
-      $(function() {
-        var header = $(".start-style");
-        $(window).scroll(function() {    
-          var scroll = $(window).scrollTop();
-
-          if (scroll >= 10) {
-            header.removeClass('start-style').addClass("scroll-on");
-          } else {
-            header.removeClass("scroll-on").addClass('start-style');
-          }
-        });
-      });   
+                  if (scroll >= 10) {
+                    header.removeClass('start-style').addClass("scroll-on");
+                  } else {
+                    header.removeClass("scroll-on").addClass('start-style');
+                  }
+                });
+              });   
 
     //Animation
 
